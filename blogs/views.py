@@ -14,8 +14,9 @@ def home_view(request):
 #   return render('index.html', {'obj': models.Contents.objects.all()})
 
 class ContentsList(ListView):
-    model=Contents
     queryset = Contents.objects.all().order_by('-created_at')
+    # context_object_name='data'
+    model=Contents
     template_name = 'index.html'
 
 

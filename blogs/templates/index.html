@@ -12,7 +12,8 @@
   <div class="row blog-container">
     <!-- Blog Entries Column -->
     <div class="col-md-8 mt-3 left">
-      {% for a in ContentsList %}
+      <!-- {{object_list}} -->
+      {% for a in object_list %}
       <div class="card mb-4">
         <div class="card-body">
           <h2 class="card-title">{{ a.title|title }}</h2>
@@ -21,7 +22,7 @@
           </p>
           <p class="card-text">{{a.content|slice:":200" }}</p>
           <a
-            href="{% url 'blog:Contentsdetail' a.slug  %}"
+            href="{% url 'blogs:Contentsdetail' a.slug  %}"
             class="btn btn-primary">Read More &rarr;</a
           >
         </div>
